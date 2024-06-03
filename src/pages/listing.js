@@ -13,14 +13,14 @@ function Listing() {
   const fetchTodo = async (page) => {
     const response = await getPaginatedTodo(page);
     const data = response?.data;
-    if (data == null) {
+    if (data === null) {
       console.log("Backend Error");
       return;
     }
     const items = data.items;
     const hasMorePage = data.meta.has_more_page;
     setHasMorePage(hasMorePage);
-    if (page == 1) {
+    if (page === 1) {
       setTodos(items);
     } else {
       setTodos([...todos, ...items]);

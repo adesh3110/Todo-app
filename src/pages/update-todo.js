@@ -14,7 +14,7 @@ function UpdateTodo() {
 
   const handleChange = (e) => {
     let { name, value } = e.target;
-    if (name == "is_completed") {
+    if (name === "is_completed") {
       value = !data.is_completed;
     }
 
